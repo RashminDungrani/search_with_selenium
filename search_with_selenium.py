@@ -10,7 +10,6 @@ from time import sleep
 import os
 import subprocess
 import traceback
-import time, winsound
 import msvcrt
 
 
@@ -246,7 +245,6 @@ try:
 except Exception:
     print("\n\n*********** ERROR ***********\n")
     traceback.print_exc()
-    winsound.PlaySound('sir_please_Check_out_this_Exception.wav', winsound.SND_FILENAME)
     print("\nPress any key to continue...")
     msvcrt.getch()   
 
