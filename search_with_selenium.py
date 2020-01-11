@@ -58,6 +58,7 @@ def help():
     |  keyword    |   website              keyword    |   website                                 |
     |  --------------------------          --------------------------                             |
     |  gg         |   google.com           error      |   google, stackoverflow, github           |
+    |  image      |   images.google.com                                                           |
     |  yt         |   youtube.com                                                                 |
     |  stack      |   stackoverflow.com                                                           |
     |  w3         |   w3schools.com                                                               |
@@ -88,6 +89,14 @@ def clickOnFirstSite():
 def google_search(search):
     print("searching...")
     link = 'https://www.google.com/'
+    opne_link(link)
+    search_field = driver.find_element_by_name("q")
+    search_field.send_keys(search)
+    search_field.submit()
+
+def google_image(search):
+    print("searching...")
+    link = 'https://images.google.com/'
     opne_link(link)
     search_field = driver.find_element_by_name("q")
     search_field.send_keys(search)
@@ -191,6 +200,9 @@ try:
         # google search
         elif first_word == "gg":
             google_search(my_string[3:])
+
+        elif first_word == "image":
+            google_image(my_string[6:])
 
         elif my_string == "help":
             help()
